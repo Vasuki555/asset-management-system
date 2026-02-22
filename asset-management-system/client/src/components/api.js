@@ -4,7 +4,7 @@ const isDevelopment = window.location.hostname === 'localhost' || window.locatio
 
 const API_URL = isDevelopment 
   ? 'http://localhost:5001/api'
-  : 'https://your-backend-url.onrender.com/api'; // Update this after deploying backend
+  : 'https://asset-management-system-hgt7.onrender.com/api'; // Update this after deploying backend
 
 // Get token from localStorage
 const getToken = () => localStorage.getItem('token');

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assets - Asset Management System</title>
+  <link rel="stylesheet" href="src/styles/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <h1>Asset Management</h1>
+      <button class="btn btn-primary" onclick="showAddAssetModal()">Add New Asset</button>
+    </div>
+
+    <div class="card">
+      <div class="filters">
+        <input type="text" id="searchInput" placeholder="Search assets..." class="form-control">
+        <select id="categoryFilter" class="form-control">
+          <option value="">All Categories</option>
+          <option value="Laptop">Laptop</option>
+          <option value="Desktop">Desktop</option>
+          <option value="Monitor">Monitor</option>
+          <option value="Keyboard">Keyboard</option>
+          <option value="Mouse">Mouse</option>
+          <option value="Printer">Printer</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Other">Other</option>
+        </select>
+        <select id="statusFilter" class="form-control">
+          <option value="">All Status</option>
+          <option value="Available">Available</option>
+          <option value="Assigned">Assigned</option>
+          <option value="Maintenance">Maintenance</option>
+          <option value="Retired">Retired</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Asset ID</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Serial Number</th>
+              <th>Status</th>
+              <th>Location</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="assetsTableBody">
+            <tr><td colspan="7" class="text-center">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="pagination" class="pagination"></div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Asset Modal -->
+  <div id="assetModal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <div class="card-header" id="modalTitle">Add New Asset</div>
+      <form id="assetForm">
+        <input type="hidden" id="assetId">
+        <div class="form-group">
+          <label for="assetName">Asset Name</label>
+          <input type="text" id="assetName" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="assetCategory">Category</label>
+          <select id="assetCategory" class="form-control" required>
+            <option value="Laptop">Laptop</option>
+            <option value="Desktop">Desktop</option>
+            <option value="Monitor">Monitor</option>
+            <option value="Keyboard">Keyboard</option>
+            <option value="Mouse">Mouse</option>
+            <option value="Printer">Printer</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="serialNumber">Serial Number</label>
+          <input type="text" id="serialNumber" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="purchaseDate">Purchase Date</label>
+          <input type="date" id="purchaseDate" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="cost">Cost</label>
+          <input type="number" id="cost" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="warrantyExpiry">Warranty Expiry</label>
+          <input type="date" id="warrantyExpiry" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="assetStatus">Status</label>
+          <select id="assetStatus" class="form-control" required>
+            <option value="Available">Available</option>
+            <option value="Assigned">Assigned</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Retired">Retired</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" class="form-control" required>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <button type="submit" class="btn btn-primary">Save Asset</button>
+          <button type="button" class="btn btn-danger" onclick="closeAssetModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="src/pages/assets.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Asset Management System</title>
+  <link rel="stylesheet" href="src/styles/style.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>Asset Management</h1>
+        <p>Login to your account</p>
+      </div>
+
+      <div id="alert"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+      </form>
+
+      <p class="text-center mt-2">
+        Don't have an account? <a href="register.html" style="color: var(--primary-color);">Register</a>
+      </p>
+    </div>
+  </div>
+
+  <script type="module" src="src/pages/login.js"></script>
+</body>
+</html>
